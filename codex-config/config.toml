@@ -1,0 +1,350 @@
+model_provider = "custom"
+model = "wbm-deepseek-v4.1-flash"
+review_model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+disable_response_storage = true
+network_access = "enabled"
+windows_wsl_setup_acknowledged = true
+
+# >>> codex-model-switcher >>>
+# 由 sync-codex-models.mjs 自动生成，请勿手改（改动会被覆盖）
+model_catalog_json = "C:\\Users\\phlus\\.codex\\model-catalog.json"
+
+notify = [ "C:\\Users\\phlus\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1fb7137c46617d50\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+[model_providers.custom]
+name = "LocalRouter"
+base_url = "http://127.0.0.1:8788/v1"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+
+[model_providers.kkidc]
+name = "Custom"
+base_url = "https://ai-api.kkidc.com/v1"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+[model_providers.agentaipilot]
+name = "Custom"
+base_url = "https://agentaipilot.com/v1"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+[model_providers.zhipu]
+name = "Custom"
+base_url = "https://open.bigmodel.cn/api/paas/v4"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+[model_providers.minimax]
+name = "Custom"
+base_url = "https://api.minimaxi.com/v1"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+[model_providers.deepseek]
+name = "DeepSeek"
+base_url = "https://api.deepseek.com"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+# <<< codex-model-switcher <<<
+[model_providers]
+
+[model_providers.codex_local_access]
+name = "agentaipilot.com"
+base_url = "https://agentaipilot.com"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+# 本地模型路由器（codex-model-router）：所有模型统一走这里，按模型名自动分流到各渠道
+[model_providers.local-router]
+name = "LocalRouter"
+base_url = "http://127.0.0.1:8788/v1"
+wire_api = "responses"
+requires_openai_auth = false
+experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = '\\?\C:\Users\phlus\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\phlus\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[marketplaces.ecc]
+source_type = "local"
+source = '\\?\E:\github\ECC'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
+enabled = true
+
+[plugins."ecc@ecc"]
+enabled = true
+
+[windows]
+sandbox = "elevated"
+
+[projects.'e:\github\toonflow-web-master']
+trust_level = "trusted"
+
+[projects.'e:\github\sub2api-main']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\new project']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\凡人之躯-战西岐']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\comfyui插件-本地codex']
+trust_level = "trusted"
+
+[projects.'e:\comfyui\custom_nodes\comfyui-agentaipilot-gpt']
+trust_level = "trusted"
+
+[projects.'e:\github\官方网站\lusixian']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\摩尔缠论']
+trust_level = "trusted"
+
+[projects.'e:\github\gptplus注册机']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\sd逆向-新渠道']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\skill封装']
+trust_level = "trusted"
+
+[projects.'e:\github\mjflow4.0']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\newapi-mjflow']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\new project 2']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\obsidian-每日工作计划']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\html文档编写']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\图片生成']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\豆包轮询系统']
+trust_level = "trusted"
+
+[projects.'e:\github\infinite-canvas-main']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\mjflow供应商']
+trust_level = "trusted"
+
+[projects.'e:\github\obsidian']
+trust_level = "trusted"
+
+[projects.'e:\github\smart-finance-hub']
+trust_level = "trusted"
+
+[projects.'e:\github\豆包视频去水印']
+trust_level = "trusted"
+
+[projects.'e:\github\lovart']
+trust_level = "trusted"
+
+[projects.'e:\github\agentaipolit文档管理']
+trust_level = "trusted"
+
+[projects.'e:\github\官方网站\rsd']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\new project 3']
+trust_level = "trusted"
+
+[projects.'e:\github\lovar-cookie']
+trust_level = "trusted"
+
+[projects.'e:\github\编剧skill\天蚕土豆风格']
+trust_level = "trusted"
+
+[projects.'e:\github\mjflow2.0-main']
+trust_level = "trusted"
+
+[projects.'e:\github\编剧skill\seedance生成视频skills']
+trust_level = "trusted"
+
+[projects.'e:\github\mjflow3.0']
+trust_level = "trusted"
+
+[projects.'e:\github\mjflow-app-master']
+trust_level = "trusted"
+
+[projects.'e:\github\篡改猴']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\房源查找']
+trust_level = "trusted"
+
+[projects.'e:\github\供应商系统']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\日常瞎聊']
+trust_level = "trusted"
+
+[projects.'e:\github\chat_agentaipolit']
+trust_level = "trusted"
+
+[projects.'e:\github\每日事项 dataview看板']
+trust_level = "trusted"
+
+[projects.'e:\github\obsidian\.obsidian\plugins\obsidian-每日工作计划']
+trust_level = "trusted"
+
+[projects.'e:\github\toonflow原始项目\toonflow-app-master\toonflow-app-master']
+trust_level = "trusted"
+
+[projects.'e:\github\libtv+lovart素材同步插件']
+trust_level = "trusted"
+
+[projects.'e:\github\ai项目网站\网站']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\chatgpt\ai知识库-小程序']
+trust_level = "trusted"
+
+[projects.'e:\github\微信小程序项目\ai知识库-小程序']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\chatgpt\小程序自动化发布文章']
+trust_level = "trusted"
+
+[projects.'c:\users\phlus\documents\chatgpt\btc量化软件']
+trust_level = "trusted"
+
+[projects.'e:\github\work buddy\data\2026-10-20-14-58-57']
+trust_level = "trusted"
+
+[projects.'e:\github\dashi-taskboard-main']
+trust_level = "trusted"
+
+[projects.'e:\github\creatorpicks']
+trust_level = "trusted"
+
+[projects.'e:\github\tiktok-tap网站\tiktok-tap']
+trust_level = "trusted"
+
+[mcp_servers.obsidian]
+url = "http://127.0.0.1:27123/mcp/"
+bearer_token_env_var = "OBSIDIAN_API_KEY"
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\phlus\AppData\Local\OpenAI\Codex\runtimes\cua_node\1fb7137c46617d50\bin\node_repl.exe'
+env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY", "CODEX_WINDOWS_REGISTERED_CORE"]
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\phlus\AppData\Local\OpenAI\Codex\runtimes\cua_node\1fb7137c46617d50\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\phlus\AppData\Local\OpenAI\Codex\runtimes\cua_node\1fb7137c46617d50\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\phlus\.codex;C:\Users\phlus\AppData\Local\OpenAI\Codex\runtimes\cua_node\1fb7137c46617d50\bin\node_modules'
+CODEX_HOME = 'C:\Users\phlus\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1021.31345"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/phlus/.codex/plugins/cache/openai-bundled/browser/26.1021.31345/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-faad3fef-569b-4018-b3cd-fb2ac0207369'
+CODEX_CLI_PATH = 'C:\Users\phlus\AppData\Local\OpenAI\Codex\bin\2993767bd1dfb009\codex.exe'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+
+[desktop]
+ambient-suggestions-enabled = true
+conversationDetailMode = "STEPS_COMMANDS"
+followUpQueueMode = "queue"
+selected-avatar-id = "fireball"
+open-link-in-target-preference = "external-browser"
+projectlessWorkspaceRoot = 'E:\github\codex'
+avatar-overlay-pet-visible = true
+avatar-overlay-mascot-width-px = 80
+appearanceTheme = "light"
+localeOverride = "zh-CN"
+default-workspace-full-view = true
+
+[features]
+js_repl = false
+memories = true
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "8e172ec9f458f2e636fc69a1b8c68c217f6bb8d10c41f70a05a0878b73863701"
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[[skills.config]]
+path = 'C:\Users\phlus\.codex\skills\short-drama-video-storyboard-prompt\SKILL.md'
+enabled = false
+
+[hooks.state."ecc@ecc:hooks/codex-hooks.json:session_start:0:0"]
+trusted_hash = "sha256:af11f84aded85744187d170760b246406606904c3dd46b9dfbf6e17edc594fdc"
+trusted_content_hash = "sha256:dcb8d01dfea005b39a0ac470e51e3102901a43f3437ecda0b166222cac400ceb"

@@ -1,0 +1,232 @@
+{
+  "port": 8788,
+  "defaultChannel": "openai",
+  "channels": {
+    "openai": {
+      "label": "OpenAI (agentaipilot)",
+      "base": "https://agentaipilot.com/v1",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "wire": "responses",
+      "match": [
+        "gpt-",
+        "codex",
+        "o1-",
+        "o3-",
+        "o4-",
+        "chatgpt-"
+      ],
+      "models": [
+        "gpt-5.5",
+        "gpt-5.6",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
+        "gpt-6",
+        "gpt-6-sol",
+        "gpt-6-astra",
+        "gpt-6-luna",
+        "gpt-6.1-sol"
+      ]
+    },
+    "deepseek": {
+      "label": "DeepSeek 官方",
+      "base": "https://api.deepseek.com",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "wire": "responses",
+      "match": [
+        "deepseek"
+      ],
+      "models": [
+        "deepseek-flash",
+        "deepseek-v4-pro"
+      ]
+    },
+    "minimax": {
+      "label": "MiniMax 官方",
+      "base": "https://api.minimaxi.com/v1",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "wire": "responses",
+      "match": [
+        "minimax-"
+      ],
+      "models": [
+        "MiniMax-M3.1-Flash",
+        "MiniMax-M3"
+      ]
+    },
+    "claude": {
+      "label": "Claude (kkidc)",
+      "base": "https://ai-api.kkidc.com/v1",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "wire": "chat",
+      "viaProxy": "direct",
+      "match": [
+        "claude-",
+        "kkai-"
+      ],
+      "models": [
+        "claude-opus-4-7",
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5-20251001"
+      ]
+    },
+    "glm": {
+      "label": "智谱 GLM",
+      "base": "https://open.bigmodel.cn/api/paas/v4",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "wire": "chat",
+      "match": [
+        "glm-"
+      ],
+      "models": [
+        "glm-5.3",
+        "glm-5.3-flashx"
+      ]
+    },
+    "kimi": {
+      "label": "Kimi (Moonshot)",
+      "base": "https://api.moonshot.cn/v1",
+      "key": "在这里填入你的Moonshot API Key",
+      "wire": "chat",
+      "match": [
+        "kimi",
+        "moonshot"
+      ],
+      "models": [
+        "kimi-k2-0905-preview",
+        "kimi-latest"
+      ]
+    },
+    "4z-gpt": {
+      "label": "4Z 中转 · GPT",
+      "base": "https://4zapi.com/v1",
+      "key": "在这里填入你的 4Z API Key",
+      "keyFile": "4z",
+      "wire": "responses",
+      "stripPrefix": "4z-",
+      "match": [
+        "4z-gpt-"
+      ],
+      "models": [
+        "4z-gpt-5.6-sol",
+        "4z-gpt-5.6-terra",
+        "4z-gpt-5.6-luna",
+        "4z-gpt-6-sol",
+        "4z-gpt-6-astra",
+        "4z-gpt-6-luna",
+        "4z-gpt-6.1-sol"
+      ]
+    },
+    "4z-claude": {
+      "label": "4Z 中转 · Claude",
+      "base": "https://4zapi.com/v1",
+      "key": "在这里填入你的 4Z API Key",
+      "keyFile": "4z",
+      "wire": "chat",
+      "stripPrefix": "4z-",
+      "match": [
+        "4z-claude-"
+      ],
+      "models": [
+        "4z-claude-opus-4-8",
+        "4z-claude-opus-5",
+        "4z-claude-opus-5-5",
+        "4z-claude-sonnet-5",
+        "4z-claude-sonnet-5-5",
+        "4z-claude-haiku-5-5",
+        "4z-claude-fable-5",
+        "4z-claude-fable-5-1"
+      ]
+    },
+    "4z-grok": {
+      "label": "4Z 中转 · Grok",
+      "base": "https://4zapi.com/v1",
+      "key": "在这里填入你的 4Z API Key",
+      "keyFile": "4z",
+      "wire": "chat",
+      "stripPrefix": "4z-",
+      "match": [
+        "4z-grok-"
+      ],
+      "models": [
+        "4z-grok-4.5",
+        "4z-grok-4.6",
+        "4z-grok-4.7"
+      ]
+    },
+    "wb2": {
+      "label": "WB2 中转 (wbsub2.lusixian.com)",
+      "base": "https://wbsub2.lusixian.com/v1",
+      "key": "在这里填入你的 WB2 API Key",
+      "keyFile": "wb2",
+      "wire": "responses",
+      "stripPrefix": "wb2-",
+      "match": [
+        "wb2-"
+      ],
+      "models": [
+        "wb2-deepseek-v4-pro",
+        "wb2-deepseek-v4.1-flash",
+        "wb2-glm-5.1",
+        "wb2-glm-5.2",
+        "wb2-glm-5.3",
+        "wb2-glm-5.3-flash",
+        "wb2-glm-5.3-flashx",
+        "wb2-glm-5v-turbo",
+        "wb2-hy3",
+        "wb2-hy4-preview",
+        "wb2-hy4-preview-exp",
+        "wb2-hy4-preview-f",
+        "wb2-kimi-k2.6",
+        "wb2-kimi-k2.7",
+        "wb2-kimi-k2.8-preview",
+        "wb2-kimi-k3-1",
+        "wb2-kimi-k3-2",
+        "wb2-mimo-v2.6-pro",
+        "wb2-minimax-m3",
+        "wb2-minimax-m3-pay",
+        "wb2-minimax-m3.1-flash",
+        "wb2-space-bunny",
+        "wb2-step-5-preview"
+      ]
+    },
+    "wbm": {
+      "label": "WBm 中转 (韩国 WorkBuddy)",
+      "base": "https://www.agentaipilot.com/v1",
+      "key": "PASTE_YOUR_KEY_HERE",
+      "keyFile": "wbm",
+      "wire": "responses",
+      "stripPrefix": "wbm-",
+      "viaProxy": "auto",
+      "match": [
+        "wbm-"
+      ],
+      "models": [
+        "wbm-deepseek-v4-pro",
+        "wbm-deepseek-v4.1-flash",
+        "wbm-glm-5.1",
+        "wbm-glm-5.2",
+        "wbm-glm-5.3",
+        "wbm-glm-5.3-flash",
+        "wbm-glm-5.3-flashx",
+        "wbm-glm-5v-turbo",
+        "wbm-hy3",
+        "wbm-hy4-preview-exp",
+        "wbm-hy4-preview-f",
+        "wbm-kimi-k2.6",
+        "wbm-kimi-k2.7",
+        "wbm-kimi-k2.8-preview",
+        "wbm-kimi-k3-1",
+        "wbm-kimi-k3-2",
+        "wbm-kimi-k3.1-pro",
+        "wbm-mimo-v2.6-pro",
+        "wbm-minimax-m3",
+        "wbm-minimax-m3-pay",
+        "wbm-minimax-m3.1-flash",
+        "wbm-space-bunny",
+        "wbm-step-5-preview"
+      ]
+    }
+  },
+  "proxy": "http://127.0.0.1:7897"
+}
