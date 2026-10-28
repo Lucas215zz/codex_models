@@ -1,14 +1,17 @@
-model_provider = "custom"
-model = "wbm-deepseek-v4.1-flash"
-review_model = "gpt-5.6-sol"
+# ===== 直连模式：Codex 直接连中转站，不经过本地路由器 =====
+# 换模型：改下面的 model = "..."（wbm 渠道 23 个可用，如 glm-5.3-flashx / kimi-k3-2 / deepseek-v4-pro）
+# 换渠道：改 model_provider = "..." 并确认对应 [model_providers.*] 里的 key 有效
+model_provider = "wbm"
+model = "deepseek-v4.1-flash"
+review_model = "glm-5.3-flashx"
 model_reasoning_effort = "high"
 disable_response_storage = true
 network_access = "enabled"
 windows_wsl_setup_acknowledged = true
 
 # >>> codex-model-switcher >>>
-# 由 sync-codex-models.mjs 自动生成，请勿手改（改动会被覆盖）
-model_catalog_json = "C:\\Users\\phlus\\.codex\\model-catalog.json"
+# 直连模式下模型清单由上方注释维护；如以后要回路由器模式，恢复下面这行
+# model_catalog_json = "C:\\Users\\phlus\\.codex\\model-catalog.json"
 
 notify = [ "C:\\Users\\phlus\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1fb7137c46617d50\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [model_providers.custom]
@@ -16,14 +19,22 @@ name = "LocalRouter"
 base_url = "http://127.0.0.1:8788/v1"
 wire_api = "responses"
 requires_openai_auth = false
+experimental_bearer_token = "local-router"
+
+[model_providers.wbm]
+name = "WBm"
+base_url = "https://www.agentaipilot.com/v1"
+wire_api = "responses"
+requires_openai_auth = false
 experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+supports_websockets = false
 
 [model_providers.kkidc]
 name = "Custom"
 base_url = "https://ai-api.kkidc.com/v1"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "sk-sIWSRrU8n0VECFn7KwYEuQVMVCGdsGtL7WUHpfFUAbi0hnTW"
 supports_websockets = false
 
 [model_providers.agentaipilot]
@@ -31,7 +42,7 @@ name = "Custom"
 base_url = "https://agentaipilot.com/v1"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "sk-ff78598c7a2276a85e41355f3d470f37769588621da6fbc322732431b9f8a5d3"
 supports_websockets = false
 
 [model_providers.zhipu]
@@ -39,7 +50,7 @@ name = "Custom"
 base_url = "https://open.bigmodel.cn/api/paas/v4"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "e614e6841186499986f28b9eec8b5839.a6bMlGzlzOkhBo72"
 supports_websockets = false
 
 [model_providers.minimax]
@@ -47,7 +58,7 @@ name = "Custom"
 base_url = "https://api.minimaxi.com/v1"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "sk-cp-nCQMD768JvdsV9wjRJGCFFjgRU8yOvrdhDHNGor4qKgQgDKJpTT1Ciy7_YVP9bgHEi2f7ofyh--ye92alKa4GzpbOXm7qfrq0NUzWXUasXzD4sdX2TvY8uE"
 supports_websockets = false
 
 [model_providers.deepseek]
@@ -55,7 +66,7 @@ name = "DeepSeek"
 base_url = "https://api.deepseek.com"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "sk-ad881e36dc854bf9b72cb638df58048d"
 supports_websockets = false
 
 # <<< codex-model-switcher <<<
@@ -66,7 +77,7 @@ name = "agentaipilot.com"
 base_url = "https://agentaipilot.com"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "sk-d34db3c6f92cbd4961570313e1215cb0d354b609c4413f0d16e56c3de1d5f304"
 supports_websockets = false
 
 # 本地模型路由器（codex-model-router）：所有模型统一走这里，按模型名自动分流到各渠道
@@ -75,7 +86,7 @@ name = "LocalRouter"
 base_url = "http://127.0.0.1:8788/v1"
 wire_api = "responses"
 requires_openai_auth = false
-experimental_bearer_token = "PASTE_YOUR_KEY_HERE"
+experimental_bearer_token = "local-router"
 supports_websockets = false
 
 [marketplaces.openai-bundled]
